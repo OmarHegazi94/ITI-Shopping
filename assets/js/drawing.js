@@ -77,7 +77,6 @@ function displayNav() {
                 </li>
                 <li class="nav-item">
                     <a href="categories.html">Categories</a>
-                  
                 </li>                
                 <li><a href="about.html">About us</a></li>
                 <li><a href="contact.html">Contact</a></li>
