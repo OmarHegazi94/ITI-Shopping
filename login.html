@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Login to your account</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/styles/bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/General_Styles.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/contact.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/login.css">
+</head>
+
+<body>
+
+    <div class="super_container">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="home_background" style="background-image:url(./assets/images/contact.jpg)">
+                            </div>
+                            <div class="home_content_container">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="home_content">
+                                                <div class="breadcrumbs">
+                                                    <ul>
+                                                        <li><a href="index.html">Home</a></li>
+                                                        <li>Login</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <div class="container content_container login">
+                <!-- Get in touch -->
+                <div class="col-lg-6 contact_col mx-auto mt-5">
+                    <div class="get_in_touch">
+                        <div class="section_title">Login to Your account</div>
+
+                        <div class="contact_form_container">
+                            <form action="#" id="contact_form" class="contact_form" method="get" action="#">
+
+                                <div>
+                                    <!-- Email -->
+                                    <label for="useremail">Email*</label>
+                                    <input type="email" id="useremail" class="contact_input" required>
+                                    <span id="useremailerror" class="display-none">Please Provide a valid Email
+                                        Address</span>
+                                </div>
+
+                                <div>
+                                    <!-- Password -->
+                                    <label for="password">Password*</label>
+                                    <input type="password" id="password" class="contact_input" required>
+                                    <span id="userpasserror" class="display-none">User Pass Must Be 6 to 9 digits
+                                    </span>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-4">
+                                        <button type="submit" class="button contact_button">
+                                            <span>Login</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-end align-items-center">
+                                        <p class="account-link">Don't have an account?<a href="SignUp.html">
+                                                Register</a></p>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!--========================= Scripts =========================-->
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/styles/bootstrap4/popper.js"></script>
+    <script src="./assets/styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="./assets/js/login.js"></script>
+</body>
+
+</html>
