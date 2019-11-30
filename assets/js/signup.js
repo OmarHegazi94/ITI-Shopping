@@ -86,7 +86,7 @@ window.addEventListener('load', function () {
 
     // form sumbit 
     document.forms[0].addEventListener('submit', function (e) {
-
+        conf_password = document.getElementById('confpassword');
         if (!(isusernamevalid() && isuserpassvalid() && isuserconfpassvalid() && iseuseemailvalid())) {
             e.preventDefault();
         } else {
@@ -124,3 +124,33 @@ function iseuseemailvalid() {
 }
 
 
+
+
+
+
+
+$(document).ready(function () {
+
+    displaylogin();
+    useremail = document.getElementById('useremail');
+
+
+
+
+    var signup = document.getElementById('signup');
+    signup.addEventListener('click', function () {
+
+        useremail = document.getElementById('useremail');
+
+
+
+        window.localStorage.setItem('newu', useremail.value);
+        window.localStorage.setItem('flag', 1);
+
+
+
+    });
+
+
+
+});

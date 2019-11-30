@@ -97,7 +97,7 @@ window.addEventListener('load', function () {
 
 				let InStockHTML = `
 										<div class="col-md-4">
-											<a href="./product.html">
+											<a href="./product.html" data-id='${AllCat[i].Products[x].product_ID}' class='pLink'>
 									`
 				InStockHTML += `
 									<div class="card">
@@ -157,7 +157,7 @@ window.addEventListener('load', function () {
 			}
 
 			else {
-				allProducts += `<a href="./product.html">`
+				allProducts += `<a href="./product.html" data-id='${AllCat[i].Products[x].product_ID}' class='pLink'>`
 			}
 
 			allProducts +=

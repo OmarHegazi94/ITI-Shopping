@@ -18,7 +18,9 @@ for (let i = 0; i < AllCat.length; i++) {
     }
 
     else {
-        appleItem += `<a data-id= '${AllCat[0].Products[i].product_ID}' class='pLink' href="./product.html">`
+        // omar
+        appleItem += `<a data-id='${AllCat[0].Products[i].product_ID}' class='pLink' href="./product.html">`
+        //omar
     }
 
     appleItem +=
@@ -71,7 +73,7 @@ for (let i = 0; i < AllCat.length; i++) {
     }
 
     else {
-        samsungItem += `<a data-id= '${AllCat[1].Products[i].product_ID}' class='pLink' href="./product.html">`
+        samsungItem += `<a data-id='${AllCat[1].Products[i].product_ID}' class='pLink' href="./product.html">`
     }
 
     samsungItem +=
@@ -127,7 +129,7 @@ for (let i = 0; i < AllCat.length; i++) {
     }
 
     else {
-        dellItem += `<a href="./product.html"  data-id= '${AllCat[2].Products[i].product_ID}' class='pLink'>`
+        dellItem += `<a href="./product.html"  data-id='${AllCat[2].Products[i].product_ID}' class='pLink'>`
     }
 
     dellItem +=

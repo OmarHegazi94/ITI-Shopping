@@ -1,6 +1,6 @@
 var localProducts = [];
 var ls = window.localStorage;
-
+var flag = 0;
 
 $(document).ready(function () {
     var products = window.localStorage.getItem('products');
@@ -17,6 +17,15 @@ $(document).ready(function () {
 
     displayNav();
     displayCartItemsCount();
+
+
+
+
+
+
+
+
+
 });/*ready*/
 
 function addOrder(orderItem) {
@@ -72,3 +81,5 @@ function drawCart() {
 
     }/**/
 }/*drawCart*/
+
+
