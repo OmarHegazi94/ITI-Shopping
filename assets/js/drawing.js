@@ -109,12 +109,13 @@ function displayCart() {
         var p = getProductByID(co.product_ID);
         var itemPrice = parseInt(co.stock) * parseFloat(p.product_Price);
         x += `
-                <tr>
-                    <td>${i + 1}</td>
-                    <td>${p.product_Name}</td>
-                    <td>${co.stock}</td>
-                    <td>${p.product_Price}</td>
-                    <td>${itemPrice}</td>                    
+               <tr id="item" data-path="${i + 1}" >
+                    <td class="">${i + 1}</td>
+                    <td class="">${p.product_Name}</td>
+                    <td class="">${co.stock}</td>
+                    <td class="">${p.product_Price}</td>
+                    <td class="">${itemPrice}</td>  
+                    <td class=""><button data-path="${i + 1}" id="delete" class="btn btn-danger" onclick=deleterow();>Delete</button></td>                  
                 </tr>
                 
                 `;
@@ -130,6 +131,10 @@ function displayCart() {
 
 
 }/**/
+function deleterow(){
+    $('#item').remove();
+}
+
 
 
 
