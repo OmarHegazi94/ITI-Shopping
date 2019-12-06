@@ -109,14 +109,6 @@ function displayCart() {
         var p = getProductByID(co.product_ID);
         var itemPrice = parseInt(co.stock) * parseFloat(p.product_Price);
         x += `
-<<<<<<< HEAD
-                <tr>
-                    <td>${i + 1}</td>
-                    <td>${p.product_Name}</td>
-                    <td>${co.stock}</td>
-                    <td>${p.product_Price}</td>
-                    <td>${itemPrice}</td>                    
-=======
                <tr id="item" data-path="${i + 1}" >
                     <td class="">${i + 1}</td>
                     <td class="">${p.product_Name}</td>
@@ -124,7 +116,6 @@ function displayCart() {
                     <td class="">${p.product_Price}</td>
                     <td class="">${itemPrice}</td>  
                     <td class=""><button data-path="${i + 1}" id="delete" class="btn btn-danger" onclick=deleterow();>Delete</button></td>                  
->>>>>>> a1cec4ec2e355ca0bfdd3e550442b429c86b7c16
                 </tr>
                 
                 `;
@@ -132,26 +123,16 @@ function displayCart() {
 
     x += `</tbody>
             </table>`;
-<<<<<<< HEAD
-    console.log(x);
-=======
- 
->>>>>>> a1cec4ec2e355ca0bfdd3e550442b429c86b7c16
+
     $('#cartProducts').html(x);
     $('#cartProducts').find('table').DataTable();
 
 
-
-
 }/**/
-<<<<<<< HEAD
-=======
-function deleterow(){
+
+function deleterow() {
     $('#item').remove();
 }
-
->>>>>>> a1cec4ec2e355ca0bfdd3e550442b429c86b7c16
-
 
 
 
@@ -165,21 +146,14 @@ var login = `
         </svg>
         <div>Login</div>
     </a>
-<<<<<<< HEAD
-</div> `
-function displaylogin() {
-    $('.displaylogin').html(login);
-}
-
-=======
 </div> `;
-function displaylogin(){
-    flag=  window.localStorage.getItem('flag');
-			if(flag==null){
-				
-                $('.displaylogin').html(login);
-            }
-        }
-        displaylogin();
-            
->>>>>>> a1cec4ec2e355ca0bfdd3e550442b429c86b7c16
+
+function displaylogin() {
+    flag = window.localStorage.getItem('flag');
+    if (flag == null) {
+
+        $('.displaylogin').html(login);
+    }
+}
+displaylogin();
+

@@ -71,27 +71,6 @@ function isuserpassvalid() {
 
 
 
-<<<<<<< HEAD
-lsusermail = window.localStorage.getItem('newu');
-// lsusermail=JSON.parse(lsusermail);
-
-var login = document.getElementById('login');
-var useremaill = document.getElementById('useremaill');
-login.addEventListener('click', function (e) {
-    e.preventDefault();
-    if (useremaill.value == lsusermail) {
-
-        window.location.href = 'index.html';
-        window.localStorage.setItem('flag', 1);
-
-    } else {
-        alert('sign up first');
-        window.location.href = 'SignUp.html';
-
-    }
-
-});
-=======
 lsusermail=window.localStorage.getItem('newu');
 // lsusermail=JSON.parse(lsusermail);
 
@@ -118,5 +97,4 @@ login.addEventListener('click',function(e){
     }
     
 })
->>>>>>> a1cec4ec2e355ca0bfdd3e550442b429c86b7c16
 

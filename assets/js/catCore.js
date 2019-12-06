@@ -1,21 +1,21 @@
 
-class Product {
+// class Product {
 
-    constructor(imgUrl, name, stock, price, description=null) {
-        this.IMGURL = imgUrl;
-        this.Stock = stock;
-        this.Price = price;
-        this.Name = name;
-        this.Description = description;
-    }
+//     constructor(imgUrl, name, stock, price, description=null) {
+//         this.IMGURL = imgUrl;
+//         this.Stock = stock;
+//         this.Price = price;
+//         this.Name = name;
+//         this.Description = description;
+//     }
 
-    productData() {
-        return `Product img ${this.IMGURL} Product Stock ${this.Stock} Product Price ${this.Price} Product Name ${this.Name} Product Description ${this.Description}`;
-    }
+//     productData() {
+//         return `Product img ${this.IMGURL} Product Stock ${this.Stock} Product Price ${this.Price} Product Name ${this.Name} Product Description ${this.Description}`;
+//     }
 
-}
+// }
 
-let lgLap = new Product('./images/products/1.png', 'macbook pro', 10, 2400, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, vitae?');
+// let lgLap = new Product('./images/products/1.png', 'macbook pro', 10, 2400, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, vitae?');
 
 // console.log(lgLap.productData());
 
