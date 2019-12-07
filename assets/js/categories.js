@@ -2,19 +2,19 @@ window.addEventListener('load', function () {
 
 
 	// Display items based on price from input range slider
-	var slider = document.getElementById("myRange");
-	var output = document.getElementById("demo");
+	// var slider = document.getElementById("myRange");
+	// var output = document.getElementById("demo");
 
 
-	output.innerHTML = slider.value; // Display the default slider value
+	// output.innerHTML = slider.value; // Display the default slider value
 
-	// Update the current slider value (each time you drag the slider handle)
-	slider.oninput = function () {
-		output.innerHTML = slider.value;
-		console.log(slider.value);
-	};
+	// // Update the current slider value (each time you drag the slider handle)
+	// slider.oninput = function () {
+	// 	output.innerHTML = slider.value;
+	// 	console.log(slider.value);
+	// };
 
-	let itemPrice = 0;
+	// let itemPrice = 0;
 
 	var OutStockHTML = '';
 	var InStockHTML = '';
@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
 			// Stock Filter
 			let itemStockCount = AllCat[i].Products[x].product_Stock;
 
-			if (itemPrice <= AllCat[i].Products[x].product_Price) {
+			// if (itemPrice <= AllCat[i].Products[x].product_Price) {
 				
 				// In Stock Filter
 				if (itemStockCount > 0) {
@@ -134,13 +134,13 @@ window.addEventListener('load', function () {
 							</div>`
 
 				$('#allProducts').append(allProducts);
-			}
+			// }
 
 
 
 		}
 	} // End For loops
-	console.log(itemPrice);
+	// console.log(itemPrice);
 
 	// console.log(allProducts);
 
