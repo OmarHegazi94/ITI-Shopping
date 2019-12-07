@@ -13,7 +13,7 @@ $(document).ready(function(){
           	
         var pID = parseInt(window.localStorage.getItem('theID'));
         let currentProduct = {};
-
+	let currentbrand = {};
         var relatedproducts=[];
         for (let j = 0; j < localProducts.length; j++) {
             for (let n = 0; n < localProducts[j].Products.length; n++) {
