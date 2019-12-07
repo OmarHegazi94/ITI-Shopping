@@ -19,15 +19,17 @@ $(document).ready(function(){
             for (let n = 0; n < localProducts[j].Products.length; n++) {
                 if (pID == localProducts[j].Products[n].product_ID) {
                     currentProduct = localProducts[j].Products[n];
+                    currentbrand=localProducts[j];
                     relatedproducts =localProducts[j]; 
                     break;
                 }/*was found*/
             }/*inner for*/
         }/*outer for*/
-
+									
+         
 
         
-        displayProduct(currentProduct);
+        displayProduct(currentProduct,currentbrand);
         window.localStorage.setItem(pID, JSON.stringify(currentProduct));
         clickedproduct = JSON.parse(localStorage.getItem(pID));
         // localStorage.setItem('user', JSON.stringify(user));
@@ -48,7 +50,7 @@ $(document).ready(function(){
                 updateProductQ(pID,q);
                 currentProduct = getProductByID(pID);
                 displayProduct(currentProduct);
-                console.log(getOrder());
+                // console.log(getOrder());
             }/**/
         });/*click*/
         

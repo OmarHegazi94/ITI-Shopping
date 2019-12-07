@@ -1,6 +1,28 @@
 
-function displayProduct(p) {
+function displayProduct(p,b) {
     var x = `
+    <div class="home">
+			<div class="home_container my-5">
+				<div class="home_background" style="background-image:url(assets/images/categories.jpg)"></div>
+				<div class="home_content_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="home_content">
+									<div class="itemname home_title">${b.Brand_Name}<span>.</span></div>
+									<div class="home_text">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies
+											metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
                     <div class="row details_row">
 
                     <!-- Product Image -->
@@ -16,7 +38,7 @@ function displayProduct(p) {
                     <!-- Product Content -->
                     <div class="col-lg-6">
                         <div class="details_content">
-                            <div class="itemname details_name"></div>
+                            <div class="itemname details_name">${p.product_Name}</div>
 
                             <div class="itemprice details_price">${p.product_Price} $</div>
 
@@ -109,14 +131,14 @@ function displayCart() {
         var p = getProductByID(co.product_ID);
         var itemPrice = parseInt(co.stock) * parseFloat(p.product_Price);
         x += `
-                <tr>
-                    <td>${i + 1}</td>
-                    <td>${p.product_Name}</td>
-                    <td>${co.stock}</td>
-                    <td>${p.product_Price}</td>
-                    <td>${itemPrice}</td>                    
+                <tr id="item" data-path="${i + 1}" >
+                    <td class="">${i + 1}</td>
+                    <td class="">${p.product_Name}</td>
+                    <td class="">${co.stock}</td>
+                    <td class="">${p.product_Price}</td>
+                    <td class="">${itemPrice}</td>  
+                    <td class=""><button data-path="${i + 1}" id="delete" class="btn btn-danger" onclick=deleterow();>Delete</button></td>                  
                 </tr>
-                
                 `;
     }
 
@@ -126,11 +148,29 @@ function displayCart() {
     $('#cartProducts').html(x);
     $('#cartProducts').find('table').DataTable();
 
+    // $('#delete').click(function(e){
+       
+    //         //  if (e.target.data("path")== $('#item').data("path")){
+    //             $('#item').remove();
+    //          }
+    // })
+
 
 
 
 }/**/
 
+function deleterow(){
+    $('#item').remove();
+}
+
+    // $('#delete').click(function(e){
+       
+    //          if (e.target.data("path")== $('#item').data("path")){
+    //             $('#item').remove();
+    //          }
+             
+    // })
 
 
 
