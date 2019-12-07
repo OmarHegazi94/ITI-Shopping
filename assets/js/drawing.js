@@ -144,7 +144,7 @@ function displayCart() {
 
     x += `</tbody>
             </table>`;
- 
+
     $('#cartProducts').html(x);
     $('#cartProducts').find('table').DataTable();
 
@@ -156,21 +156,11 @@ function displayCart() {
     // })
 
 
-
-
 }/**/
 
-function deleterow(){
+function deleterow() {
     $('#item').remove();
 }
-
-    // $('#delete').click(function(e){
-       
-    //          if (e.target.data("path")== $('#item').data("path")){
-    //             $('#item').remove();
-    //          }
-             
-    // })
 
 
 
@@ -185,12 +175,13 @@ var login = `
         <div>Login</div>
     </a>
 </div> `;
-function displaylogin(){
-    flag=  window.localStorage.getItem('flag');
-			if(flag==null){
-				
-                $('.displaylogin').html(login);
-            }
-        }
-        displaylogin();
-            
+
+function displaylogin() {
+    flag = window.localStorage.getItem('flag');
+    if (flag == null) {
+
+        $('.displaylogin').html(login);
+    }
+}
+displaylogin();
+
