@@ -45,14 +45,13 @@ function displayProduct(p) {
 
                             <!-- Share -->
                             <div class="details_share">
-                                <span>Share:</span>
                            
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row description_row">
+                <div class="row description_row mt-5">
                     <div class="col">
                         <div class="description_title_container">
                             <div class="description_title">Description</div>                            

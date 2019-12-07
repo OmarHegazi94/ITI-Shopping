@@ -490,7 +490,7 @@
 }
 
 /********************************* Footer *********************************/
-.footer {
+/* .footer {
 	background: #222;
 	color: #aaa;
 	padding-top: 10px;
@@ -516,8 +516,7 @@
 }
 
 .footer .three-column li {
-	/* width: 33.3333%; */
-	/* float: left; */
+
 	padding: 5px 0;
 }
 
@@ -546,5 +545,5 @@
 .footer-social-ul li {
 	display: inline;
 	margin-right: 28px;
-}
+} */
 
