@@ -1,57 +1,24 @@
 window.addEventListener('load', function () {
 
 
-
 	// Display items based on price from input range slider
-	// var slider = document.getElementById("myRange");
-	// var output = document.getElementById("demo");
-
-	// output.innerHTML = slider.value; // Display the default slider value
-	// // Update the current slider value (each time you drag the slider handle)
-	// slider.oninput = function () {
-	// 	output.innerHTML = this.value;
-	// };
+	var slider = document.getElementById("myRange");
+	var output = document.getElementById("demo");
 
 
+	output.innerHTML = slider.value; // Display the default slider value
 
-	// inStockBtn = document.getElementById('inStock');
-	// outOfStockBtn = document.getElementById('outOfStock');
-	$('#InStockDiv').hide();
-	$('#OutStockDiv').hide();
+	// Update the current slider value (each time you drag the slider handle)
+	slider.oninput = function () {
+		output.innerHTML = slider.value;
+		console.log(slider.value);
+	};
 
-	// $('#allProducts').children().show();
+	let itemPrice = 0;
 
-
-	$("#BothStock").click(function () {
-		$('#InStockDiv').hide();
-		$('#OutStockDiv').hide();
-		$('#allProducts').children().show();
-	});
-
-	$("#inStock").click(function () {
-		$('#allProducts').children().hide();
-		$('#InStockDiv').show();
-	});
-
-	$("#outOfStock").click(function () {
-		$('#allProducts').children().hide();
-		$('#InStockDiv').hide();
-		$('#OutStockDiv').show();
-	});
-
-
-
-
-
-
-
-
-	// Display all products from all categories
-	let Products = [];
-
-	let InStockArr = [];
-	let OutOfStockArr = [];
-
+	var OutStockHTML = '';
+	var InStockHTML = '';
+	var allProducts = '';
 
 	for (let i = 0; i < AllCat.length; i++) {
 
@@ -66,128 +33,132 @@ window.addEventListener('load', function () {
 
 		$('#catNames').append(BrandNames);
 
-		// Add Click Event on all label
-		// Get the Related Products to each Checkbox
-		// Display items based on brand Name
 
-		$('.checkbox-label').click(function (event) {
-
-			if (event.target.innerHTML === AllCat[i].Brand_Name) {
-				// console.log(AllCat[i]);
-
-
-
-			}
-
-
-		});
-		console.log(AllCat[i]);
-
+		// Inner loop
 		for (let x = 0; x < AllCat[i].Products.length; x++) {
 
-			Products.push(AllCat[i].Products[x]);
+			// $('.checkbox-label').click(function (event) {
+			// 	if (event.target.innerHTML === AllCat[i].Brand_Name) {
+			// 		$('#allProducts').children().remove();
+			// 		$('#allProducts').append(AllCat[i].Products[x]);
+			// 	}
+			// });
 
 			// Stock Filter
 			let itemStockCount = AllCat[i].Products[x].product_Stock;
 
-			// In Stock Filter
-			if (itemStockCount > 0) {
-				InStockArr.push(AllCat[i].Products[x]);
+			if (itemPrice <= AllCat[i].Products[x].product_Price) {
+				
+				// In Stock Filter
+				if (itemStockCount > 0) {
 
 
-				let InStockHTML = `
+					InStockHTML += `
 										<div class="col-md-4">
 											<a href="./product.html" data-id='${AllCat[i].Products[x].product_ID}' class='pLink'>
 									`
-				InStockHTML += `
+					InStockHTML += `
 									<div class="card">
 										<img src="${AllCat[i].Products[x].product_Img}" class="card-img-top" alt="${AllCat[i].Products[x].product_ImgAlt}">
 										<div class="card-body">
 											<h5 class="card-title"> ${AllCat[i].Products[x].product_Name} </h5>
 								`
 
-				InStockHTML += `<p class="card-text text-success font-weight-bold">Stock: ${AllCat[i].Products[x].product_Stock}</p>`
+					InStockHTML += `<p class="card-text text-success font-weight-bold">Stock: ${AllCat[i].Products[x].product_Stock}</p>`
 
-				InStockHTML += `<p class="card-text current-price">${AllCat[i].Products[x].product_Price}$</p>
+					InStockHTML += `<p class="card-text current-price">${AllCat[i].Products[x].product_Price}$</p>
 												</div>
 											</div>
 										</a>
 								</div>`
+				}
 
+				// Out Of stock filter
+				else if (itemStockCount == 0) {
 
-				$('#InStockDiv').append(InStockHTML);
-			}
-
-			// Out Of stock filter
-			else if (itemStockCount == 0) {
-				OutOfStockArr.push(AllCat[i].Products[x]);
-
-				let OutStockHTML = `
+					OutStockHTML += `
 										<div class="col-md-4">
 											<a >
 									`
-				OutStockHTML += `
+					OutStockHTML += `
 									<div class="card">
 										<img src="${AllCat[i].Products[x].product_Img}" class="card-img-top" alt="${AllCat[i].Products[x].product_ImgAlt}">
 										<div class="card-body">
 											<h5 class="card-title"> ${AllCat[i].Products[x].product_Name} </h5>
 								`
 
-				OutStockHTML += `<p class="card-text text-danger font-weight-bold">Stock: ${AllCat[i].Products[x].product_Stock}</p>`
+					OutStockHTML += `<p class="card-text text-danger font-weight-bold">Stock: ${AllCat[i].Products[x].product_Stock}</p>`
 
-				OutStockHTML += `<p class="card-text current-price">${AllCat[i].Products[x].product_Price}$</p>
+					OutStockHTML += `<p class="card-text current-price">${AllCat[i].Products[x].product_Price}$</p>
 												</div>
 											</div>
 										</a>
 								</div>`
+				}
 
 
-				$('#OutStockDiv').append(OutStockHTML);
-			}
 
-
-			// console.log(AllCat[i].Products[i]);
-			// Apply optional statements over the product and stock if stock equal zero
-
-			let allProducts = `
+				allProducts += `
 				<div class="col-md-4">
 			`
-			if (itemStockCount == 0) {
-				allProducts += `<a >`
-			}
 
-			else {
-				allProducts += `<a href="./product.html" data-id='${AllCat[i].Products[x].product_ID}' class='pLink'>`
-			}
+				if (itemStockCount == 0) {
+					allProducts += `<a >`
+				}
 
-			allProducts +=
-				`
+				else if (itemStockCount > 0) {
+					allProducts += `<a href="./product.html" data-id='${AllCat[i].Products[x].product_ID}' class='pLink'>`
+				}
+
+				allProducts +=
+					`
 					<div class="card">
-						<img src="${AllCat[i].Products[x].product_Img}" class="card-img-top" alt="${AllCat[i].Products[x].product_ImgAlt}">
+						<img src="${AllCat[i].Products[x].product_Img}" class="card-img-top">
 						<div class="card-body">
 							<h5 class="card-title"> ${AllCat[i].Products[x].product_Name} </h5>
 				`
 
-			if (itemStockCount == 0) {
-				allProducts += `<p class="card-text text-danger font-weight-bold">Stock: ${AllCat[i].Products[x].product_Stock}</p>`
+
+				if (itemStockCount == 0) {
+					allProducts += `<p class="card-text text-danger font-weight-bold">Stock: ${AllCat[i].Products[x].product_Stock}</p>`
+				}
+
+				else if (itemStockCount > 0) {
+					allProducts += `<p class="card-text text-success font-weight-bold">Stock: ${AllCat[i].Products[x].product_Stock}</p>`
+				}
+
+				allProducts += `<p class="card-text current-price">${AllCat[i].Products[x].product_Price}$</p>
+											</div>
+										</div>
+									</a>
+							</div>`
+
+				$('#allProducts').append(allProducts);
 			}
 
-			else {
-				allProducts += `<p class="card-text text-success font-weight-bold">Stock: ${AllCat[i].Products[x].product_Stock}</p>`
-			}
-
-			allProducts += `<p class="card-text current-price">${AllCat[i].Products[x].product_Price}$</p>
-							</div>
-						</div>
-					</a>
-			</div>`
-
-			$('#allProducts').append(allProducts);
 
 
 		}
 	} // End For loops
+	console.log(itemPrice);
 
+	// console.log(allProducts);
+
+	$("#BothStock").click(function () {
+		$('#allProducts').children().remove();
+		$('#allProducts').append(allProducts);
+	});
+
+
+	$("#outOfStock").click(function () {
+		$('#allProducts').children().remove();
+		$('#allProducts').append(OutStockHTML);
+	});
+
+	$("#inStock").click(function () {
+		$('#allProducts').children().remove();
+		$('#allProducts').append(InStockHTML);
+	});
 
 	// allProductsLength = $('#allProducts').children().length;
 
@@ -204,64 +175,48 @@ window.addEventListener('load', function () {
 		displayLength = Number($(this).children("option:selected").val());
 		let productsbox = $('#allProducts').children();
 
-		// $('#allProducts').children() == displayLength;
-
-		// Slice the New Products array with the display Number of Items
-		// Start Slicing at 2 index because the first 0+1 are rows for Stock Items
-
-		// let slicedArr = productsArr.slice(2, displayLength);
-
-
-
 		// Display only products that equals the length of User Option
 		// Equal the value from Options with productsbox length  
-		for (let i = 2; i < productsbox.length; i++) {
-
-
-			if (productsbox.length == displayLength) {
-				productsbox[i].classList.add('d-block');
-				$(productsbox).prepend(productsbox[i]);
-
-			} else {
-				productsbox[i].classList.remove('d-none');
-			}
-
+		for (let i = 0; i < productsbox.length; i++) {
+			$('#allProducts').children().length == displayLength;
 		}
-		console.log(productsbox.length);
 
-
-
-
-
-		// productsArr.forEach(element => {
-		// 	if (element > slicedArr.length) {
-		// 		element.addClass('d-none');
-		// 	} else {
-		// 		$('#allProducts').prepend(slicedArr);
-		// 	}
-		// });
-
-
-		// console.log(slicedArr, displayLength);
-
-
-
-
-		// if (slicedArr == displayLength) {
-		// 	$('#allProducts').children().show();
-		// }
-
-		// else {
-		// 	$('#allProducts').children().hide();
-		// }
-
-
-
-		// console.log(productsbox);
+		// console.log(displayLength);
+		// console.log($('#allProducts').children());
 	});
+
+
+
+
+
+	// productsArr.forEach(element => {
+	// 	if (element > slicedArr.length) {
+	// 		element.addClass('d-none');
+	// 	} else {
+	// 		$('#allProducts').prepend(slicedArr);
+	// 	}
+	// });
+
+
+	// console.log(slicedArr, displayLength);
+
+
+
+
+	// if (slicedArr == displayLength) {
+	// 	$('#allProducts').children().show();
+	// }
+
+	// else {
+	// 	$('#allProducts').children().hide();
+	// }
+
+
+
+	// console.log(productsbox);
+});
 
 
 
 	// console.log(OutOfStockArr);
 	// console.log(InStockArr);
-});
