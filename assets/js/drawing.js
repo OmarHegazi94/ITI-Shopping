@@ -1,5 +1,5 @@
 
-function displayProduct(p,b) {
+function displayProduct(p, b) {
     var x = `
     <div class="home">
 			<div class="home_container my-5">
@@ -110,6 +110,7 @@ function displayCartItemsCount() {
     $('#cartItemsCount').text('(' + getOrder().length + ')');
 }/*displayCart*/
 
+
 function displayCart() {
     var order = getOrder();
     var x = `
@@ -136,7 +137,6 @@ function displayCart() {
                     <td class="">${co.stock}</td>
                     <td class="">${p.product_Price}</td>
                     <td class="">${itemPrice}</td>  
-                    <td class=""><button data-path="${i + 1}" id="delete" class="btn btn-danger" onclick=deleterow();>Delete</button></td>                  
                 </tr>
                 `;
     }
@@ -147,8 +147,11 @@ function displayCart() {
     $('#cartProducts').html(x);
     $('#cartProducts').find('table').DataTable();
 
+
+    var table = $('#example').DataTable();
+
     // $('#delete').click(function(e){
-       
+
     //         //  if (e.target.data("path")== $('#item').data("path")){
     //             $('#item').remove();
     //          }
@@ -157,9 +160,10 @@ function displayCart() {
 
 }/**/
 
-function deleterow() {
-    $('#item').remove();
-}
+
+// function deleterow() {
+//     $('#item').remove();
+// }
 
 
 
