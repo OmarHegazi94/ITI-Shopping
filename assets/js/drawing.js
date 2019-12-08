@@ -148,7 +148,7 @@ function displayCart() {
     $('#cartProducts').find('table').DataTable();
 
 
-    var table = $('#example').DataTable();
+    // var table = $('#example').DataTable();
 
     // $('#delete').click(function(e){
 
