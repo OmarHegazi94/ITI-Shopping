@@ -80,7 +80,7 @@ login.addEventListener('click',function(e){
     e.preventDefault();
 
     if (lsusermail==null){
-        alert('sign up first');
+        alert("Account doesn't exist , pls sign up first ");
         window.location.href='SignUp.html';
            
     }
