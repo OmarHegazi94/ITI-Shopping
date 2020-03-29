@@ -1,0 +1,114 @@
+    .container {
+        width: 1170px;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;
+    }
+
+    .row {
+        display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;margin-right: -15px;margin-left: -15px;justify-content: center;
+    }
+
+    .col-lg-12 {
+        -ms-flex: 0 0 100%;flex: 0 0 100%;max-width: 100%;
+    }
+
+    .card {
+        border: 1px solid #000;position:relative;padding-left: 3rem;padding-right: 3rem;padding-top: 3rem;box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);position: relative;display: -ms-flexbox;display: flex;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.125);border-radius: 0.25rem;flex: 1 1 auto;min-height: 1px;padding: 1.25rem;
+    }
+
+    .triangles-container {
+        position: absolute;top: 0;right: 0;
+    }
+
+    .triangle-blue {
+        display: inline-block;width: 0;height: 0;border-style: solid;border-width: 0px 248px 248px 52px;border-color: transparent #179bd7 transparent transparent;
+    }
+
+    .triangle-black {
+        display: inline-block;width: 0;height: 0;border-style: solid;border-width: 0px 208px 208px 40px;border-color: transparent #212327 transparent transparent;
+    }
+
+    .main-dev {
+        display: flex;flex-direction:column;justify-content: space-between;align-items: flex-start;
+    }
+
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .table > thead > tr > th,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > th,
+    .table > thead > tr > td,
+    .table > tbody > tr > td,
+    .table > tfoot > tr > td {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+    }
+
+    .table > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .table > caption + thead > tr:first-child > th,
+    .table > colgroup + thead > tr:first-child > th,
+    .table > thead:first-child > tr:first-child > th,
+    .table > caption + thead > tr:first-child > td,
+    .table > colgroup + thead > tr:first-child > td,
+    .table > thead:first-child > tr:first-child > td {
+        border-top: 0;
+    }
+
+    .table > tbody + tbody {
+        border-top: 2px solid #ddd;
+    }
+
+    .table .table {
+        background-color: #fff;
+    }
+
+    .table-condensed > thead > tr > th,
+    .table-condensed > tbody > tr > th,
+    .table-condensed > tfoot > tr > th,
+    .table-condensed > thead > tr > td,
+    .table-condensed > tbody > tr > td,
+    .table-condensed > tfoot > tr > td {
+        padding: 5px;
+    }
+
+    .table-bordered {
+        border: 1px solid #ddd;
+    }
+
+    .table-bordered > thead > tr > th,
+    .table-bordered > tbody > tr > th,
+    .table-bordered > tfoot > tr > th,
+    .table-bordered > thead > tr > td,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tfoot > tr > td {
+        border: 1px solid #ddd;
+    }
+    .table-bordered > thead > tr > th,
+    .table-bordered > thead > tr > td {
+        border-bottom-width: 2px;
+    }
+
+    .table-striped > tbody > tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-hover > tbody > tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .table-responsive {
+        min-height: 0.01%;
+        overflow-x: auto;
+    }
+    
+    @page {
+        size: A4;
+    }
